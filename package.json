@@ -1,0 +1,50 @@
+{
+  "name": "wallet",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "WALLET_ENV=web pnpm vite",
+    "watch": "tsx build/index.ts --watch",
+    "build": "tsx build/index.ts",
+    "typecheck": "tsc",
+    "lint": "eslint {scripts,ui}",
+    "postinstall": "simple-git-hooks"
+  },
+  "dependencies": {
+    "@mantine/core": "^5.10.4",
+    "@metamask/browser-passworder": "^4.0.2",
+    "@tanstack/react-query": "^4.24.10",
+    "nanoid": "^4.0.1",
+    "nanoid-dictionary": "^4.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rxjs": "^7.8.0"
+  },
+  "devDependencies": {
+    "@rollup/plugin-inject": "^5.0.3",
+    "@tsconfig/vite-react": "^1.0.1",
+    "@types/chrome": "^0.0.217",
+    "@types/nanoid-dictionary": "^4.2.0",
+    "@types/node": "^18.14.1",
+    "@types/react": "^18.0.28",
+    "@types/react-dom": "^18.0.11",
+    "@vitejs/plugin-react-swc": "^3.2.0",
+    "boxen": "^7.0.1",
+    "commander": "^10.0.0",
+    "eslint": "^8.34.0",
+    "eslint-config-react-app": "^7.0.1",
+    "lint-staged": "^13.1.2",
+    "node-stdlib-browser": "^1.2.0",
+    "prettier": "^2.8.4",
+    "simple-git-hooks": "^2.8.1",
+    "tsx": "^3.12.3",
+    "typescript": "^4.9.5",
+    "vite": "^4.1.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint-staged --concurrent false"
+  },
+  "lint-staged": {
+    "*": "prettier --write --ignore-unknown",
+    "{scripts,ui}/**/*.{ts,tsx}": "eslint --fix --max-warnings=0"
+  }
+}
