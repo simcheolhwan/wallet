@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { Box, Button, Container, Group, Image, Stack, Text, Title } from "@mantine/core"
 import { EVENT } from "../shared/constants"
-import { useRequest } from "./Background"
+import { useRequest } from "./background"
 
 const PASSWORD = "password"
 
